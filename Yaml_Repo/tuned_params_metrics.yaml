@@ -1,0 +1,35 @@
+DecisionTreeClassifier:
+  model: DecisionTreeClassifier
+  parameters:
+    criterion: entropy
+    max_depth: 20
+    min_samples_leaf: 1
+    min_samples_split: 5
+  metrics:
+    accuracy_train: 0.995966
+    accuracy_test: 0.92695
+    precision_train: 0.995978
+    precision_test: 0.927449
+    recall_train: 0.995966
+    recall_test: 0.92695
+    f1_score_train: 0.995966
+    f1_score_test: 0.927189
+    roc_auc_train: 0.999962
+    roc_auc_test: 0.881681
+LogisticRegression:
+  model: LogisticRegression
+  parameters:
+    C: 0.1
+    penalty: l2
+    solver: liblinear
+  metrics:
+    accuracy_train: 0.884182
+    accuracy_test: 0.868378
+    precision_train: 0.884238
+    precision_test: 0.89789
+    recall_train: 0.884182
+    recall_test: 0.868378
+    f1_score_train: 0.884178
+    f1_score_test: 0.87764
+    roc_auc_train: 0.953082
+    roc_auc_test: 0.932277

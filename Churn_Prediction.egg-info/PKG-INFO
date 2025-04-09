@@ -1,0 +1,9 @@
+Metadata-Version: 2.2
+Name: Churn_Prediction
+Version: 0.1
+Summary: Customer Churn in Bank 
+Author: ANP
+Requires-Python: >=3.7
+Dynamic: author
+Dynamic: requires-python
+Dynamic: summary

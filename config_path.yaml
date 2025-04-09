@@ -1,0 +1,44 @@
+DataIngestion:
+  zip_path: "C:/Users/prasa/Downloads/hotel_bookings.csv.zip"
+  collected_data_path: "./Data/collected_data"
+  data_artifacts_path: "./Data/data_artifacts"
+  extracted_data_path: "./Data/collected_data/bank_data.csv"
+  raw_data_path: "./Data/data_artifacts/raw_data.csv"
+
+DataValidation:
+  raw_data_path: "./Data/data_artifacts/raw_data.csv"
+  data_schema_path: "./Yaml_Repo/schema_data.yaml"
+
+DataTransformation:
+  raw_data_path: "./Data/collected_data/raw_data.csv"
+  X_train_path: "./Data/data_artifacts/"
+  X_test_path: "./Data/data_artifacts/"
+  y_train_path: "./Data/data_artifacts/"
+  y_test_path: "./Data/data_artifacts/"
+
+
+ModelTrainingEvaluation:
+  X_train_data_path: "./Data/data_artifacts/X_train.csv"
+  X_test_data_path: "./Data/data_artifacts/X_test.csv"
+  y_train_data_path: "./Data/data_artifacts/y_train.csv"
+  y_test_data_path: "./Data/data_artifacts/y_test.csv"
+  classifiers_param_path: "./Yaml_Repo/classifiers_param.yaml"
+  regressors_param_path: "./Yaml_Repo/regressors_param.yaml"
+  unsupervised_param _path: "./Yaml_Repo/unsupervised_param.yaml"
+  tuned_models_path: "./Yaml_Repo/tuned_params_metrics.yaml"
+
+ModelImplementation:
+  X_train_data_path: "./Data/data_artifacts/X_train.csv"
+  X_test_data_path: "./Data/data_artifacts/X_test.csv"
+  y_train_data_path: "./Data/data_artifacts/y_train.csv"
+  y_test_data_path: "./Data/data_artifacts/y_test.csv"
+  tuned_models_path: "./Yaml_Repo/tuned_params_metrics.yaml"
+  model_folder_path: "./Final_Model"
+  
+MLflowTrackingRegistry:
+  X_test_data_path: "./Data/data_artifacts/X_test.csv"
+  y_test_data_path: "./Data/data_artifacts/y_test.csv"
+  
+
+
+

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/829409781580346021/3001694f4d4047f7905a134ca362defd/artifacts
+end_time: 1744228353294
+entry_point_name: ''
+experiment_id: '829409781580346021'
+lifecycle_stage: active
+run_id: 3001694f4d4047f7905a134ca362defd
+run_name: dazzling-seal-83
+run_uuid: 3001694f4d4047f7905a134ca362defd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744228344954
+status: 3
+tags: []
+user_id: prasa

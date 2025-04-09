@@ -1,0 +1,30 @@
+unsupervised_models:
+  KMeans:
+    n_clusters: [2, 3, 5, 7, 10]
+    init: ["k-means++", "random"]
+    max_iter: [100, 300, 500]
+    random_state: [42]
+
+  DBSCAN:
+    eps: [0.3, 0.5, 0.7, 1.0]
+    min_samples: [3, 5, 10]
+    metric: ["euclidean", "manhattan"]
+    
+  AgglomerativeClustering:
+    n_clusters: [2, 3, 5, 7, 10]
+    affinity: ["euclidean", "manhattan", "cosine"]
+    linkage: ["ward", "complete", "average", "single"]
+
+  PCA:
+    n_components: [2, 3, 5, 10]
+    svd_solver: ["auto", "full", "arpack", "randomized"]
+
+  TruncatedSVD:
+    n_components: [2, 3, 5, 10]
+    algorithm: ["randomized"]
+
+  TSNE:
+    n_components: [2, 3]
+    perplexity: [5, 30, 50]
+    learning_rate: [10, 200, 500]
+    n_iter: [250, 500, 1000]

@@ -1,0 +1,147 @@
+[2025-04-10 01:21:53,832] 62 Common_Utils - INFO - Running 'main'...
+[2025-04-10 01:21:53,832] 14 Common_Utils - INFO -  ML workflow execution started ...
+[2025-04-10 01:21:53,832] 62 Common_Utils - INFO - Running 'main'...
+[2025-04-10 01:21:53,832] 14 Common_Utils - INFO - Commencing Data Ingestion..
+[2025-04-10 01:21:53,855] 111 root - INFO - yaml file at path: ./config_path.yaml loaded
+[2025-04-10 01:21:53,855] 62 Common_Utils - INFO - Running 'extract_zip'...
+[2025-04-10 01:21:53,903] 97 root - INFO - Extracted 1 files to './Data/collected_data'
+[2025-04-10 01:21:53,903] 77 Common_Utils - INFO - 'extract_zip' completed in 0.0475 sec
+[2025-04-10 01:21:53,903] 78 Common_Utils - INFO - Memory used: 107.79 KB (peak: 5191.83 KB)
+[2025-04-10 01:21:53,903] 195 root - INFO - Destination folder exists: Data\data_artifacts
+[2025-04-10 01:21:53,903] 198 root - INFO -  File 'raw_data.csv' already exists in destination. Overwriting...
+[2025-04-10 01:21:53,918] 202 root - INFO -  File copied successfully from: Data\collected_data\bank_data.csv to: Data\data_artifacts\raw_data.csv
+[2025-04-10 01:21:53,918] 210 root - INFO -  File copied successfully from: Data\collected_data\bank_data.csv to: Data\data_artifacts\raw_data.csv
+[2025-04-10 01:21:53,918] 28 Common_Utils - INFO - Data Ingestion succesfully complete..
+[2025-04-10 01:21:53,918] 77 Common_Utils - INFO - 'main' completed in 0.0864 sec
+[2025-04-10 01:21:53,918] 78 Common_Utils - INFO - Memory used: 0.00 KB (peak: 0.00 KB)
+[2025-04-10 01:21:53,918] 62 Common_Utils - INFO - Running 'main'...
+[2025-04-10 01:21:53,918] 20 Common_Utils - INFO - Commencing DataTransformation..
+[2025-04-10 01:21:53,918] 111 root - INFO - yaml file at path: ./config_path.yaml loaded
+[2025-04-10 01:21:53,918] 62 Common_Utils - INFO - Running 'read_file'...
+[2025-04-10 01:21:53,918] 60 root - INFO - Reading file: ./Data/data_artifacts/raw_data.csv
+[2025-04-10 01:21:53,982] 62 root - INFO - Successfully read file with shape: (10127, 21) and size: 212667
+[2025-04-10 01:21:53,982] 77 Common_Utils - INFO - 'read_file' completed in 0.0637 sec
+[2025-04-10 01:21:53,982] 78 Common_Utils - INFO - Memory used: 1943.93 KB (peak: 5780.13 KB)
+[2025-04-10 01:21:53,982] 62 Common_Utils - INFO - Running 'detect_outliers_in_df'...
+[2025-04-10 01:21:53,982] 62 Common_Utils - INFO - Starting outlier detection using method: zscore
+[2025-04-10 01:21:54,013] 103 Common_Utils - INFO - Outlier columns detected via zscoreOutlierDetection: ['Customer_Age' 'Dependent_count' 'Months_on_book'
+ 'Total_Relationship_Count' 'Months_Inactive_12_mon'
+ 'Contacts_Count_12_mon' 'Credit_Limit' 'Total_Revolving_Bal'
+ 'Avg_Open_To_Buy' 'Total_Amt_Chng_Q4_Q1' 'Total_Trans_Amt'
+ 'Total_Trans_Ct' 'Total_Ct_Chng_Q4_Q1' 'Avg_Utilization_Ratio']
+[2025-04-10 01:21:54,013] 77 Common_Utils - INFO - 'detect_outliers_in_df' completed in 0.0317 sec
+[2025-04-10 01:21:54,013] 78 Common_Utils - INFO - Memory used: 145.35 KB (peak: 501.16 KB)
+[2025-04-10 01:21:54,013] 62 Common_Utils - INFO - Running 'handling_outliers_df'...
+[2025-04-10 01:21:54,013] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Customer_Age.
+[2025-04-10 01:21:54,029] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Dependent_count.
+[2025-04-10 01:21:54,029] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Months_on_book.
+[2025-04-10 01:21:54,045] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Total_Relationship_Count.
+[2025-04-10 01:21:54,063] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Months_Inactive_12_mon.
+[2025-04-10 01:21:54,073] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Contacts_Count_12_mon.
+[2025-04-10 01:21:54,084] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Credit_Limit.
+[2025-04-10 01:21:54,095] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Total_Revolving_Bal.
+[2025-04-10 01:21:54,108] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Avg_Open_To_Buy.
+[2025-04-10 01:21:54,118] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Total_Amt_Chng_Q4_Q1.
+[2025-04-10 01:21:54,128] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Total_Trans_Amt.
+[2025-04-10 01:21:54,137] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Total_Trans_Ct.
+[2025-04-10 01:21:54,151] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Total_Ct_Chng_Q4_Q1.
+[2025-04-10 01:21:54,163] 81 Common_Utils - INFO - Applied Yeo-Johnson Transformation to Avg_Utilization_Ratio.
+[2025-04-10 01:21:54,164] 77 Common_Utils - INFO - 'handling_outliers_df' completed in 0.1502 sec
+[2025-04-10 01:21:54,164] 78 Common_Utils - INFO - Memory used: 1175.37 KB (peak: 1656.18 KB)
+[2025-04-10 01:21:54,164] 62 Common_Utils - INFO - Running 'feature_encoded_df'...
+[2025-04-10 01:21:54,175] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Gender.
+[2025-04-10 01:21:54,184] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Marital_Status.
+[2025-04-10 01:21:54,184] 77 Common_Utils - INFO - 'feature_encoded_df' completed in 0.0199 sec
+[2025-04-10 01:21:54,184] 78 Common_Utils - INFO - Memory used: 1824.83 KB (peak: 7298.98 KB)
+[2025-04-10 01:21:54,184] 62 Common_Utils - INFO - Running 'feature_encoded_df'...
+[2025-04-10 01:21:54,188] 50 Common_Utils - INFO - Ordinal Encoding applied successfully on column: Card_Category.
+[2025-04-10 01:21:54,192] 50 Common_Utils - INFO - Ordinal Encoding applied successfully on column: Education_Level.
+[2025-04-10 01:21:54,195] 50 Common_Utils - INFO - Ordinal Encoding applied successfully on column: Income_Category.
+[2025-04-10 01:21:54,195] 77 Common_Utils - INFO - 'feature_encoded_df' completed in 0.0117 sec
+[2025-04-10 01:21:54,195] 78 Common_Utils - INFO - Memory used: 247.93 KB (peak: 512.84 KB)
+[2025-04-10 01:21:54,195] 141 Common_Utils - INFO - Splitting dataset into training and testing sets...
+[2025-04-10 01:21:54,204] 151 Common_Utils - INFO - Train set size: 7088 samples
+[2025-04-10 01:21:54,204] 152 Common_Utils - INFO - Test set size: 3039 samples
+[2025-04-10 01:21:54,204] 62 Common_Utils - INFO - Running 'oversampled_balanced_df'...
+[2025-04-10 01:21:54,204] 31 Common_Utils - INFO - Applying SMOTE Oversampling...
+[2025-04-10 01:21:54,405] 38 Common_Utils - INFO - SMOTE applied successfully.
+[2025-04-10 01:21:54,405] 77 Common_Utils - INFO - 'oversampled_balanced_df' completed in 0.2008 sec
+[2025-04-10 01:21:54,405] 78 Common_Utils - INFO - Memory used: 4418.48 KB (peak: 8526.97 KB)
+[2025-04-10 01:21:54,405] 62 Common_Utils - INFO - Running 'feature_scaled_df'...
+[2025-04-10 01:21:54,419] 38 Common_Utils - INFO - Standardization applied successfully.
+[2025-04-10 01:21:54,421] 77 Common_Utils - INFO - 'feature_scaled_df' completed in 0.0155 sec
+[2025-04-10 01:21:54,421] 78 Common_Utils - INFO - Memory used: 5041.12 KB (peak: 5069.82 KB)
+[2025-04-10 01:21:54,735] 58 Common_Utils - INFO - Data Transformation succesfully complete..
+[2025-04-10 01:21:54,735] 77 Common_Utils - INFO - 'main' completed in 0.8168 sec
+[2025-04-10 01:21:54,735] 78 Common_Utils - INFO - Memory used: 0.00 KB (peak: 0.00 KB)
+[2025-04-10 01:21:54,735] 62 Common_Utils - INFO - Running 'main'...
+[2025-04-10 01:21:54,735] 19 Common_Utils - INFO - Commencing Model_Training_Evaluation..
+[2025-04-10 01:21:54,749] 111 root - INFO - yaml file at path: ./config_path.yaml loaded
+[2025-04-10 01:21:54,836] 62 Common_Utils - INFO - Running 'tuned_model_parameters'...
+[2025-04-10 01:21:54,888] 72 Common_Utils - INFO - Tuning model: LogisticRegression
+[2025-04-10 01:21:54,890] 75 Common_Utils - INFO - LogisticRegression is a classification model.
+[2025-04-10 01:21:54,890] 18 Common_Utils - INFO - Starting GridSearchCV for hyper_param tuning..
+[2025-04-10 01:21:58,966] 72 Common_Utils - INFO - Tuning model: DecisionTreeClassifier
+[2025-04-10 01:21:58,966] 75 Common_Utils - INFO - DecisionTreeClassifier is a classification model.
+[2025-04-10 01:21:58,966] 18 Common_Utils - INFO - Starting GridSearchCV for hyper_param tuning..
+[2025-04-10 01:22:22,956] 103 Common_Utils - INFO - the best hyperparameters for supervised models provided by grid_search_cv is: {'LogisticRegression': {'C': 0.1, 'penalty': 'l2', 'solver': 'liblinear'}, 'DecisionTreeClassifier': {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 5}}
+[2025-04-10 01:22:22,956] 77 Common_Utils - INFO - 'tuned_model_parameters' completed in 28.1204 sec
+[2025-04-10 01:22:22,956] 78 Common_Utils - INFO - Memory used: 2994.71 KB (peak: 7596.69 KB)
+[2025-04-10 01:22:22,956] 62 Common_Utils - INFO - Running 'evaluate'...
+[2025-04-10 01:22:22,956] 75 Common_Utils - INFO - Training LogisticRegression...
+[2025-04-10 01:22:23,041] 75 Common_Utils - INFO - Training DecisionTreeClassifier...
+[2025-04-10 01:22:23,210] 132 Common_Utils - INFO - 
+Best Model: DecisionTreeClassifier with Accuracy: 0.926949654491609
+[2025-04-10 01:22:23,212] 77 Common_Utils - INFO - 'evaluate' completed in 0.2560 sec
+[2025-04-10 01:22:23,212] 78 Common_Utils - INFO - Memory used: 62.76 KB (peak: 2434.34 KB)
+[2025-04-10 01:22:23,212] 62 Common_Utils - INFO - Running 'tuned_models_yaml'...
+[2025-04-10 01:22:23,214] 185 Common_Utils - INFO - tuned_classifiers updated in yaml at: ./Yaml_Repo/tuned_params_metrics.yaml
+[2025-04-10 01:22:23,224] 185 Common_Utils - INFO - tuned_classifiers updated in yaml at: ./Yaml_Repo/tuned_params_metrics.yaml
+[2025-04-10 01:22:23,224] 77 Common_Utils - INFO - 'tuned_models_yaml' completed in 0.0120 sec
+[2025-04-10 01:22:23,224] 78 Common_Utils - INFO - Memory used: 54.50 KB (peak: 93.30 KB)
+[2025-04-10 01:22:23,224] 63 Common_Utils - INFO - Model_Training_Evaluation succesfully complete..
+[2025-04-10 01:22:23,224] 77 Common_Utils - INFO - 'main' completed in 28.4895 sec
+[2025-04-10 01:22:23,224] 78 Common_Utils - INFO - Memory used: 0.00 KB (peak: 0.00 KB)
+[2025-04-10 01:22:23,224] 62 Common_Utils - INFO - Running 'main'...
+[2025-04-10 01:22:23,224] 21 Common_Utils - INFO - Commencing Model_Implementation..
+[2025-04-10 01:22:23,224] 111 root - INFO - yaml file at path: ./config_path.yaml loaded
+[2025-04-10 01:22:23,294] 111 root - INFO - yaml file at path: ./Yaml_Repo/tuned_params_metrics.yaml loaded
+[2025-04-10 01:22:23,430] 69 Common_Utils - INFO - Final model successfully saved at : Final_Model\2025-04-10_01-22-23\model.joblib
+[2025-04-10 01:22:23,430] 77 Common_Utils - INFO - 'main' completed in 0.2056 sec
+[2025-04-10 01:22:23,430] 78 Common_Utils - INFO - Memory used: 46.04 KB (peak: 3952.87 KB)
+[2025-04-10 01:22:23,430] 62 Common_Utils - INFO - Running 'main'...
+[2025-04-10 01:22:24,702] 29 Common_Utils - INFO - Commencing Model Tracking and Registry in MLflow..
+[2025-04-10 01:22:24,711] 111 root - INFO - yaml file at path: ./config_path.yaml loaded
+[2025-04-10 01:22:24,723] 111 root - INFO - yaml file at path: ./constants.yaml loaded
+[2025-04-10 01:22:24,723] 40 Common_Utils - INFO - model path is : ./Final_Model/2025-04-10_01-22-23/model.joblib
+[2025-04-10 01:22:24,748] 48 Common_Utils - INFO - joblib model loaded successfully .. with class name :DecisionTreeClassifier
+[2025-04-10 01:22:25,025] 51 Common_Utils - INFO - prediction begins 
+[2025-04-10 01:22:25,025] 53 Common_Utils - INFO -  model prediction done
+[2025-04-10 01:22:25,050] 111 root - INFO - yaml file at path: ./constants.yaml loaded
+[2025-04-10 01:22:25,050] 72 Common_Utils - INFO - model_metrics successfully appended in: ./constants.yaml
+[2025-04-10 01:22:25,065] 76 Common_Utils - INFO - Successfully logged classification metrics..
+[2025-04-10 01:22:25,634] 96 Common_Utils - INFO - Successfully logged confusion matrix artifact..
+[2025-04-10 01:22:25,642] 111 root - INFO - yaml file at path: ./constants.yaml loaded
+[2025-04-10 01:22:25,650] 105 Common_Utils - INFO - model_params successfully appended in: ./constants.yaml
+[2025-04-10 01:22:25,726] 109 Common_Utils - INFO - Successfully logged DecisionTreeClassifier model params ..
+[2025-04-10 01:22:25,745] 67 Common_Utils - INFO - Successfully logged model path ..
+[2025-04-10 01:22:25,761] 71 Common_Utils - INFO - Successfully logged source code file..
+[2025-04-10 01:22:25,936] 111 root - INFO - yaml file at path: ./constants.yaml loaded
+[2025-04-10 01:22:25,936] 77 Common_Utils - INFO - model run_id succesfully appended in: ./constants.yaml
+[2025-04-10 01:22:33,071] 80 Common_Utils - INFO - Successfully logged final model DecisionTreeClassifier..
+[2025-04-10 01:22:33,071] 111 root - INFO - yaml file at path: ./constants.yaml loaded
+[2025-04-10 01:22:33,087] 83 Common_Utils - INFO - model name succesfully appended in: ./constants.yaml
+[2025-04-10 01:22:33,087] 111 root - INFO - yaml file at path: ./constants.yaml loaded
+[2025-04-10 01:22:33,087] 28 Common_Utils - INFO - model uri succesfully appended in: ./constants.yaml
+[2025-04-10 01:22:33,217] 111 root - INFO - yaml file at path: ./constants.yaml loaded
+[2025-04-10 01:22:33,217] 37 Common_Utils - INFO - model version  succesfully appended in: ./constants.yaml
+[2025-04-10 01:22:33,236] 111 root - INFO - yaml file at path: ./constants.yaml loaded
+[2025-04-10 01:22:33,239] 43 Common_Utils - INFO - model Current stage succesfully appended in: ./constants.yaml
+[2025-04-10 01:22:33,294] 111 root - INFO - yaml file at path: ./constants.yaml loaded
+[2025-04-10 01:22:33,294] 53 Common_Utils - INFO - model run_id succesfully appended in: ./constants.yaml
+[2025-04-10 01:22:33,294] 55 Common_Utils - INFO - Model DecisionTreeClassifier version 1 transitioned to Staging stage.
+[2025-04-10 01:22:33,419] 77 Common_Utils - INFO - 'main' completed in 9.9890 sec
+[2025-04-10 01:22:33,419] 78 Common_Utils - INFO - Memory used: 76360.81 KB (peak: 89701.02 KB)
+[2025-04-10 01:22:33,419] 22 Common_Utils - INFO - ML Workflow successfully completed..
+[2025-04-10 01:22:33,419] 77 Common_Utils - INFO - 'main' completed in 39.5873 sec
+[2025-04-10 01:22:33,419] 78 Common_Utils - INFO - Memory used: 0.00 KB (peak: 0.00 KB)

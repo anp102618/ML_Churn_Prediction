@@ -1,0 +1,11 @@
+[2025-04-10 01:58:55,565] 62 Common_Utils - INFO - Running 'feature_encoded_df'...
+[2025-04-10 01:58:55,580] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Gender.
+[2025-04-10 01:58:55,580] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Marital_Status.
+[2025-04-10 01:58:55,580] 77 Common_Utils - INFO - 'feature_encoded_df' completed in 0.0157 sec
+[2025-04-10 01:58:55,580] 78 Common_Utils - INFO - Memory used: 112.60 KB (peak: 121.32 KB)
+[2025-04-10 01:58:55,580] 62 Common_Utils - INFO - Running 'feature_encoded_df'...
+[2025-04-10 01:58:55,580] 50 Common_Utils - INFO - Ordinal Encoding applied successfully on column: Card_Category.
+[2025-04-10 01:58:55,596] 50 Common_Utils - INFO - Ordinal Encoding applied successfully on column: Education_Level.
+[2025-04-10 01:58:55,605] 50 Common_Utils - INFO - Ordinal Encoding applied successfully on column: Income_Category.
+[2025-04-10 01:58:55,605] 77 Common_Utils - INFO - 'feature_encoded_df' completed in 0.0244 sec
+[2025-04-10 01:58:55,605] 78 Common_Utils - INFO - Memory used: 17.74 KB (peak: 24.17 KB)
