@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744238600227
+current_stage: None
+description: ''
+last_updated_timestamp: 1744238600227
+name: DecisionTreeClassifier
+run_id: 71777ae1312947ff952c9faeab63add4
+run_link: ''
+source: mlflow-artifacts:/504535080257980565/71777ae1312947ff952c9faeab63add4/artifacts/artifacts/DecisionTreeClassifier
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/504535080257980565/71777ae1312947ff952c9faeab63add4/artifacts/artifacts/DecisionTreeClassifier
+user_id: null
+version: 2

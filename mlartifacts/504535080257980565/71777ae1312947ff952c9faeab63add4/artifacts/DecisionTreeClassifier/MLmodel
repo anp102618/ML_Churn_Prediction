@@ -1,0 +1,43 @@
+artifact_path: DecisionTreeClassifier
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.16
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 2.21.3
+model_size_bytes: 61257
+model_uuid: 81e814ee2b9e46fab7163f4844d85f33
+prompts: null
+run_id: 71777ae1312947ff952c9faeab63add4
+signature:
+  inputs: '[{"type": "double", "name": "Customer_Age", "required": true}, {"type":
+    "double", "name": "Dependent_count", "required": true}, {"type": "double", "name":
+    "Education_Level", "required": true}, {"type": "double", "name": "Income_Category",
+    "required": true}, {"type": "double", "name": "Card_Category", "required": true},
+    {"type": "double", "name": "Months_on_book", "required": true}, {"type": "double",
+    "name": "Total_Relationship_Count", "required": true}, {"type": "double", "name":
+    "Months_Inactive_12_mon", "required": true}, {"type": "double", "name": "Contacts_Count_12_mon",
+    "required": true}, {"type": "double", "name": "Credit_Limit", "required": true},
+    {"type": "double", "name": "Total_Revolving_Bal", "required": true}, {"type":
+    "double", "name": "Avg_Open_To_Buy", "required": true}, {"type": "double", "name":
+    "Total_Amt_Chng_Q4_Q1", "required": true}, {"type": "double", "name": "Total_Trans_Amt",
+    "required": true}, {"type": "double", "name": "Total_Trans_Ct", "required": true},
+    {"type": "double", "name": "Total_Ct_Chng_Q4_Q1", "required": true}, {"type":
+    "double", "name": "Avg_Utilization_Ratio", "required": true}, {"type": "double",
+    "name": "Gender_M", "required": true}, {"type": "double", "name": "Marital_Status_Married",
+    "required": true}, {"type": "double", "name": "Marital_Status_Single", "required":
+    true}, {"type": "double", "name": "Marital_Status_Unknown", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-04-09 22:43:12.687064'

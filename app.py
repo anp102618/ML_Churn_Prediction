@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import mlflow.pyfunc
+import joblib
 from mlflow.tracking import MlflowClient
 import yaml
 from Model_Utils.Data_Preprocessing.feature_encoding import FeatureEncodingMethods
@@ -22,7 +23,7 @@ def load_production_model():
     client = MlflowClient()
     versions = client.search_model_versions(f"name='{model_name}'")
     prod_version = [
-        v for v in versions if v.tags.get("version_status").lower() == "production"
+        v for v in versions if v.tags.get("version_status") == "production"
     ]
     if not prod_version:
         raise Exception("No production model found.")
@@ -33,6 +34,10 @@ def load_production_model():
     return model
 
 model = load_production_model()
+
+ordinal_encoder = joblib.load("F:\ML_project\Script\ordinal_encoder.joblib")
+ohe_encoder = joblib.load("F:\ML_project\Script\ohe_encoder.joblib")
+scaler = joblib.load("F:\ML_project\Script\scaler.joblib")
 
 # Define input schema using Pydantic
 class InputData(BaseModel):
@@ -70,17 +75,36 @@ def home():
     return("message: Welcome to Bank Customer Churn Prediction API")
 
 @app.post("/predict")
-def predict(data: InputData):
+def predict_churn(data: InputData):
     try:
         input_df = pd.DataFrame([data.model_dump()])
-        input_df = FeatureEncodingMethods.feature_encoded_df(input_df,ohe_cols,'onehot') 
-        input_df = FeatureEncodingMethods.feature_encoded_df(input_df,ordinal_cols,'ordinal', categories)
-        scaler = StandardScaler()
-        scaled_values = scaler.fit_transform(input_df)
-        input_df = pd.DataFrame(scaled_values, columns=input_df.columns)
 
-        prediction = model.predict(input_df)
+        # Apply ordinal encoding
+        ordinal_cols = ['Card_Category', 'Education_Level', 'Income_Category']
+        input_df[ordinal_cols] = ordinal_encoder.transform(input_df[ordinal_cols])
+
+        # Apply one-hot encoding
+        onehot_cols = ["Gender", "Marital_Status"]
+        encoded = ohe_encoder.transform(input_df[onehot_cols])
+        encoded_df = pd.DataFrame(encoded, columns=ohe_encoder.get_feature_names_out(onehot_cols))
         
+        # Drop original and merge one-hot encoded
+        input_df = input_df.drop(columns=onehot_cols).reset_index(drop=True)
+        input_df = pd.concat([input_df, pd.DataFrame(encoded_df)], axis=1)
+
+        # Apply scaler
+        final_columns = input_df.columns.tolist()
+
+        # Scale
+        input_scaled = scaler.transform(input_df)
+
+        # Convert back to DataFrame with correct feature names
+        input_scaled_df = pd.DataFrame(input_scaled, columns=final_columns)
+
+
+        # Prediction
+        prediction = model.predict(input_scaled_df)
+            
         if prediction[0] == 1:
             return {"result: Attrited Customer"}
         

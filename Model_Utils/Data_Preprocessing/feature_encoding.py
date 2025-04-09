@@ -29,31 +29,43 @@ class LabelEncoding(EncodingStrategy):
 class OneHotEncoding(EncodingStrategy):
     def encode(self, df: pd.DataFrame, cols: list, categories: dict = None) -> pd.DataFrame:
         try:
-            for col in cols:
-                encoder = OneHotEncoder(sparse_output=False, drop='first')
-                encoded_data = encoder.fit_transform(df[[col]])
-                encoded_df = pd.DataFrame(encoded_data, columns=[f"{col}_{cat}" for cat in encoder.categories_[0][1:]])
-                df = df.drop(col, axis=1).reset_index(drop=True)
-                df = pd.concat([df, encoded_df], axis=1)
-                joblib.dump(encoder, "./Script/ohe_encoder.joblib")
-                logger.info(f"One-Hot Encoding applied successfully on column: {col}.")
+            encoder = OneHotEncoder(sparse_output=False, drop='first', handle_unknown="ignore")
+            encoded_data = encoder.fit_transform(df[cols])
+
+            # Generate column names
+            encoded_cols = encoder.get_feature_names_out(cols)
+            encoded_df = pd.DataFrame(encoded_data, columns=encoded_cols)
+
+            # Drop original categorical columns and concatenate encoded columns
+            df = df.drop(columns=cols).reset_index(drop=True)
+            df = pd.concat([df.reset_index(drop=True), encoded_df.reset_index(drop=True)], axis=1)
+            joblib.dump(encoder, "./Script/ohe_encoder.joblib")
+
+            logger.info(f"One-Hot Encoding applied successfully on columns: {cols}.")
             return df
-        except CustomException as e:
+
+        except Exception as e:
             logger.error(f"Error in One-Hot Encoding: {e}")
-            
+
 
 class OrdinalEncoding(EncodingStrategy):
     def encode(self, df: pd.DataFrame, cols: list, categories: dict = None) -> pd.DataFrame:
-        dict_ordinal = {}
         try:
-            for col in cols:
-                encoder = OrdinalEncoder(categories=[categories[col]])
-                df[col] = encoder.fit_transform(df[[col]])
-                joblib.dump(encoder, "./Script/ordinal_encoder.joblib")
-                logger.info(f"Ordinal Encoding applied successfully on column: {col}.")
+            # Extract category lists in correct order
+            category_list = [categories[col] for col in cols]
+
+            # Fit encoder on multiple columns
+            encoder = OrdinalEncoder(categories=category_list)
+            df[cols] = encoder.fit_transform(df[cols])
+
+            joblib.dump(encoder, "./Script/ordinal_encoder.joblib")
+            logger.info(f"Ordinal Encoding applied successfully on columns: {cols}.")
             return df
-        except CustomException as e:
+
+        except Exception as e:
             logger.error(f"Error in Ordinal Encoding: {e}")
+            raise CustomException(f"Ordinal Encoding failed: {e}")
+
             
 
 
