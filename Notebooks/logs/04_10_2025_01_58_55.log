@@ -9,3 +9,23 @@
 [2025-04-10 01:58:55,605] 50 Common_Utils - INFO - Ordinal Encoding applied successfully on column: Income_Category.
 [2025-04-10 01:58:55,605] 77 Common_Utils - INFO - 'feature_encoded_df' completed in 0.0244 sec
 [2025-04-10 01:58:55,605] 78 Common_Utils - INFO - Memory used: 17.74 KB (peak: 24.17 KB)
+[2025-04-10 02:00:25,324] 62 Common_Utils - INFO - Running 'feature_encoded_df'...
+[2025-04-10 02:00:25,333] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Gender.
+[2025-04-10 02:00:25,339] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Marital_Status.
+[2025-04-10 02:00:25,339] 77 Common_Utils - INFO - 'feature_encoded_df' completed in 0.0149 sec
+[2025-04-10 02:00:25,339] 78 Common_Utils - INFO - Memory used: 152.85 KB (peak: 162.89 KB)
+[2025-04-10 02:00:54,451] 62 Common_Utils - INFO - Running 'feature_encoded_df'...
+[2025-04-10 02:00:54,451] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Gender.
+[2025-04-10 02:00:54,468] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Marital_Status.
+[2025-04-10 02:00:54,468] 77 Common_Utils - INFO - 'feature_encoded_df' completed in 0.0167 sec
+[2025-04-10 02:00:54,468] 78 Common_Utils - INFO - Memory used: 9.64 KB (peak: 19.68 KB)
+[2025-04-10 02:04:00,032] 62 Common_Utils - INFO - Running 'feature_encoded_df'...
+[2025-04-10 02:04:00,039] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Gender.
+[2025-04-10 02:04:00,050] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Marital_Status.
+[2025-04-10 02:04:00,050] 77 Common_Utils - INFO - 'feature_encoded_df' completed in 0.0180 sec
+[2025-04-10 02:04:00,050] 78 Common_Utils - INFO - Memory used: 10.19 KB (peak: 20.23 KB)
+[2025-04-10 02:04:38,689] 62 Common_Utils - INFO - Running 'feature_encoded_df'...
+[2025-04-10 02:04:38,702] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Gender.
+[2025-04-10 02:04:38,713] 37 Common_Utils - INFO - One-Hot Encoding applied successfully on column: Marital_Status.
+[2025-04-10 02:04:38,714] 77 Common_Utils - INFO - 'feature_encoded_df' completed in 0.0231 sec
+[2025-04-10 02:04:38,714] 78 Common_Utils - INFO - Memory used: 298.36 KB (peak: 307.91 KB)
