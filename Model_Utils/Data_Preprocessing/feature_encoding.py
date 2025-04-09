@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import joblib
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, OrdinalEncoder
 from Common_Utils import logger, CustomException, track_performance
 from abc import ABC, abstractmethod
@@ -34,6 +35,7 @@ class OneHotEncoding(EncodingStrategy):
                 encoded_df = pd.DataFrame(encoded_data, columns=[f"{col}_{cat}" for cat in encoder.categories_[0][1:]])
                 df = df.drop(col, axis=1).reset_index(drop=True)
                 df = pd.concat([df, encoded_df], axis=1)
+                joblib.dump(encoder, "./Script/ohe_encoder.joblib")
                 logger.info(f"One-Hot Encoding applied successfully on column: {col}.")
             return df
         except CustomException as e:
@@ -47,6 +49,7 @@ class OrdinalEncoding(EncodingStrategy):
             for col in cols:
                 encoder = OrdinalEncoder(categories=[categories[col]])
                 df[col] = encoder.fit_transform(df[[col]])
+                joblib.dump(encoder, "./Script/ordinal_encoder.joblib")
                 logger.info(f"Ordinal Encoding applied successfully on column: {col}.")
             return df
         except CustomException as e:
