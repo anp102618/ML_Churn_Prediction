@@ -33,6 +33,7 @@ def promote_staging_to_production():
             value="production"
         )
         print(f"Promoted model version {staging_version} to 'production'.")
+        append_constants(yaml_path="./constants.yaml", key="current_stage", value= "production")
 
         # Archive previous production versions
         production_versions = [
@@ -48,7 +49,7 @@ def promote_staging_to_production():
                 key="version_status"
             )
             print(f"Archived model version {v.version} (previous production)")
-            append_constants(yaml_path="./constants.yaml", key="current_stage", value= "production")
+            
 
         return staging_version
 

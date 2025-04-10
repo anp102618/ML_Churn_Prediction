@@ -74,7 +74,9 @@ list_of_files = [
     "constants.yaml",
     "requirements.txt",
     "setup.py",
-    "misc.py",
+    "main.py",
+    "Dockerfile",
+    ".dockerignore",
  
 
 

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/884175765750476558/b006757faa9c4ff6a4179836b5b2e2cf/artifacts
+end_time: 1744275795984
+entry_point_name: ''
+experiment_id: '884175765750476558'
+lifecycle_stage: active
+run_id: b006757faa9c4ff6a4179836b5b2e2cf
+run_name: abrasive-bee-22
+run_uuid: b006757faa9c4ff6a4179836b5b2e2cf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744275786957
+status: 3
+tags: []
+user_id: prasa
