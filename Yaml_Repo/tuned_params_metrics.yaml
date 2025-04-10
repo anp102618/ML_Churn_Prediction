@@ -6,16 +6,16 @@ DecisionTreeClassifier:
     min_samples_leaf: 1
     min_samples_split: 5
   metrics:
-    accuracy_train: 0.995966
-    accuracy_test: 0.92695
-    precision_train: 0.995978
-    precision_test: 0.927979
-    recall_train: 0.995966
-    recall_test: 0.92695
-    f1_score_train: 0.995966
-    f1_score_test: 0.927424
-    roc_auc_train: 0.999962
-    roc_auc_test: 0.884206
+    accuracy_train: 0.995714
+    accuracy_test: 0.928595
+    precision_train: 0.995729
+    precision_test: 0.929537
+    recall_train: 0.995714
+    recall_test: 0.928595
+    f1_score_train: 0.995714
+    f1_score_test: 0.92903
+    roc_auc_train: 0.999957
+    roc_auc_test: 0.888651
 LogisticRegression:
   model: LogisticRegression
   parameters:

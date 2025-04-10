@@ -55,11 +55,6 @@ list_of_files = [
     f"Script/__init__.py",
     f"Script/test.py",
     f"Script/production.py",
-
-    f"Model_API/__init__.py",
-    f"Model_API/requirement.txt",
-    f"Model_API/app.py",
-    f"Model_API/input.json",
     
     f"Final_Model/__init__.py",
 
@@ -67,11 +62,19 @@ list_of_files = [
     f"Common_Utils/dataframe_methods.py",
     f"Common_Utils/file_operations.py",
 
+    f"FastAPI/__init__.py",
+    f"FastAPI/app.py",
+    f"FastAPI/preprocessors/__init__.py",
+    f"FastAPI/requirements.txt",
+    f"FastAPI/input.json",
+
+
+
     "config_path.yaml",
     "constants.yaml",
     "requirements.txt",
     "setup.py",
-    "main.py",
+    "misc.py",
  
 
 

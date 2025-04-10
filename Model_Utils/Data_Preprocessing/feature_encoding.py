@@ -39,7 +39,7 @@ class OneHotEncoding(EncodingStrategy):
             # Drop original categorical columns and concatenate encoded columns
             df = df.drop(columns=cols).reset_index(drop=True)
             df = pd.concat([df.reset_index(drop=True), encoded_df.reset_index(drop=True)], axis=1)
-            joblib.dump(encoder, "./Script/ohe_encoder.joblib")
+            joblib.dump(encoder, "./FastAPI/preprocessors/ohe_encoder.joblib")
 
             logger.info(f"One-Hot Encoding applied successfully on columns: {cols}.")
             return df
@@ -58,7 +58,7 @@ class OrdinalEncoding(EncodingStrategy):
             encoder = OrdinalEncoder(categories=category_list)
             df[cols] = encoder.fit_transform(df[cols])
 
-            joblib.dump(encoder, "./Script/ordinal_encoder.joblib")
+            joblib.dump(encoder, "./FastAPI/preprocessors/ordinal_encoder.joblib")
             logger.info(f"Ordinal Encoding applied successfully on columns: {cols}.")
             return df
 

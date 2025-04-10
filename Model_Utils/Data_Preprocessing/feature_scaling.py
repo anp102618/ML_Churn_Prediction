@@ -39,7 +39,7 @@ class Standardization(ScalingStrategy):
             logger.info("Standardization applied successfully.")
             df_scaled_train = pd.concat([X_train_scaled_df, y_train.reset_index(drop=True)], axis=1)
             df_scaled_test = pd.concat([X_test_scaled_df, y_test.reset_index(drop=True)], axis=1)
-            joblib.dump(scaler, "./Script/scaler.joblib")
+            joblib.dump(scaler, "./FastAPI/preprocessors/scaler.joblib")
             return X_train_scaled_df, X_test_scaled_df, df_scaled_train, df_scaled_test
         except CustomException as e:
             logger.error(f"Error in Standardization: {e}")

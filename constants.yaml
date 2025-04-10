@@ -1,13 +1,13 @@
 Current_stage: Staging
-final_model_path: Final_Model/2025-04-10_09-45-23/model.joblib
+final_model_path: Final_Model/2025-04-10_11-33-15/model.joblib
 metrics:
-  accuracy: 0.926620598881211
-  f1: 0.7749747729566094
-  precision: 0.7634194831013916
-  recall: 0.7868852459016393
-  roc_auc: 0.8701184363573269
+  accuracy: 0.9249753208292202
+  f1: 0.7715430861723447
+  precision: 0.7549019607843137
+  recall: 0.7889344262295082
+  roc_auc: 0.8699670171131861
 model_name: DecisionTreeClassifier
-model_uri: runs:/921f10bb07644eb7b58210d85441d376/artifacts/DecisionTreeClassifier
+model_uri: runs:/4d5f1de2ad3446f994cac7939c44aef4/artifacts/DecisionTreeClassifier
 model_version: '1'
 params:
   criterion: entropy
@@ -15,4 +15,4 @@ params:
   min_samples_leaf: 1
   min_samples_split: 5
   splitter: best
-run_id: 921f10bb07644eb7b58210d85441d376
+run_id: 4d5f1de2ad3446f994cac7939c44aef4

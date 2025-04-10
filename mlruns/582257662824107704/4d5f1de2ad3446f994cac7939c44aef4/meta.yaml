@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/582257662824107704/4d5f1de2ad3446f994cac7939c44aef4/artifacts
+end_time: 1744265004525
+entry_point_name: ''
+experiment_id: '582257662824107704'
+lifecycle_stage: active
+run_id: 4d5f1de2ad3446f994cac7939c44aef4
+run_name: popular-gnu-125
+run_uuid: 4d5f1de2ad3446f994cac7939c44aef4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744264996983
+status: 3
+tags: []
+user_id: prasa

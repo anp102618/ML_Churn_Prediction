@@ -33,8 +33,11 @@ def main():
 
         dict_file = load_yaml(config_path)
         const_file = load_yaml(const_path)
+        X_train_data_path = dict_file["MLflowTrackingRegistry"]["X_train_data_path"]
+        y_train_data_path = dict_file["MLflowTrackingRegistry"]["y_train_data_path"]
         X_test_data_path = dict_file["MLflowTrackingRegistry"]["X_test_data_path"]
         y_test_data_path = dict_file["MLflowTrackingRegistry"]["y_test_data_path"]
+        
         model_path = "./"+ str(const_file["final_model_path"])
 
         logger.info(f"model path is : {model_path}")
@@ -51,6 +54,11 @@ def main():
             logger.info(f"prediction begins ")
             y_pred = model.predict(X_test)
             logger.info(f" model prediction done")
+
+            mlflow.log_artifact(X_train_data_path, artifact_path= "datasets")
+            mlflow.log_artifact(y_train_data_path, artifact_path= "datasets")
+            mlflow.log_artifact(X_test_data_path, artifact_path= "datasets")
+            mlflow.log_artifact(y_test_data_path, artifact_path= "datasets")
 
             #Log model metrics artifact
             logging_metrics(const_path=const_path, y_test=y_test, y_pred=y_pred)

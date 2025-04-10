@@ -36,7 +36,9 @@ ModelImplementation:
   model_folder_path: "./Final_Model"
   
 MLflowTrackingRegistry:
+  X_train_data_path: "./Data/data_artifacts/X_train.csv"
   X_test_data_path: "./Data/data_artifacts/X_test.csv"
+  y_train_data_path: "./Data/data_artifacts/y_train.csv"
   y_test_data_path: "./Data/data_artifacts/y_test.csv"
   
 
