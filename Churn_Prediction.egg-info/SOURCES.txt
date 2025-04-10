@@ -9,6 +9,9 @@ Common_Utils/file_operations.py
 Data/__init__.py
 Data/collected_data/__init__.py
 Data/data_artifacts/__init__.py
+FastAPI/__init__.py
+FastAPI/app.py
+FastAPI/preprocessors/__init__.py
 Final_Model/__init__.py
 Model_Utils/__init__.py
 Model_Utils/Data_Preprocessing/__init__.py

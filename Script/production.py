@@ -18,7 +18,7 @@ def promote_staging_to_production():
         versions = client.search_model_versions(f"name='{model_name}'")
 
         # Get current staging version
-        staging_versions = [v for v in versions if v.tags.get("version_status").lower() == "staging"]
+        staging_versions = [v for v in versions if v.tags.get("version_status") == "staging"]
         if not staging_versions:
             raise ValueError("No model version tagged as 'staging'.")
         

@@ -1,5 +1,6 @@
 Common_Utils
 Data
+FastAPI
 Final_Model
 Model_Utils
 Notebooks

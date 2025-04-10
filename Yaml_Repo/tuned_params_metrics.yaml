@@ -1,21 +1,21 @@
 DecisionTreeClassifier:
   model: DecisionTreeClassifier
   parameters:
-    criterion: entropy
-    max_depth: 20
+    criterion: gini
+    max_depth: 10
     min_samples_leaf: 1
     min_samples_split: 2
   metrics:
-    accuracy_train: 1.0
-    accuracy_test: 0.924317
-    precision_train: 1.0
-    precision_test: 0.925664
-    recall_train: 1.0
-    recall_test: 0.924317
-    f1_score_train: 1.0
-    f1_score_test: 0.924928
-    roc_auc_train: 1.0
-    roc_auc_test: 0.867918
+    accuracy_train: 0.977811
+    accuracy_test: 0.925633
+    precision_train: 0.977969
+    precision_test: 0.931385
+    recall_train: 0.977811
+    recall_test: 0.925633
+    f1_score_train: 0.97781
+    f1_score_test: 0.927707
+    roc_auc_train: 0.99599
+    roc_auc_test: 0.915178
 LogisticRegression:
   model: LogisticRegression
   parameters:
