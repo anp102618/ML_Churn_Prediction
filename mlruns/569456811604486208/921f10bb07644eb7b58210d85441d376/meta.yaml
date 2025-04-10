@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/569456811604486208/921f10bb07644eb7b58210d85441d376/artifacts
+end_time: 1744258542513
+entry_point_name: ''
+experiment_id: '569456811604486208'
+lifecycle_stage: active
+run_id: 921f10bb07644eb7b58210d85441d376
+run_name: respected-panda-646
+run_uuid: 921f10bb07644eb7b58210d85441d376
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744258526453
+status: 3
+tags: []
+user_id: prasa
