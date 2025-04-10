@@ -1,6 +1,7 @@
 import yaml
 import mlflow
 from mlflow.tracking import MlflowClient
+from Common_Utils import append_constants
 
 
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
@@ -47,6 +48,7 @@ def promote_staging_to_production():
                 key="version_status"
             )
             print(f"Archived model version {v.version} (previous production)")
+            append_constants(yaml_path="./constants.yaml", key="current_stage", value= "production")
 
         return staging_version
 

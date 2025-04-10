@@ -39,7 +39,7 @@ def register_and_tag_model(const_path ,run_id_value, model_name, stage):
         # Transition the model version to Staging
         new_stage = stage
 
-        append_constants(yaml_path=const_path, key="Current_stage", value= new_stage)
+        append_constants(yaml_path=const_path, key="current_stage", value= new_stage)
         logger.info(f"model Current stage succesfully appended in: {const_path}")
 
         client.set_model_version_tag(

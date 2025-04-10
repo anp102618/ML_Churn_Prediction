@@ -91,7 +91,7 @@ def main():
             logger.info(f"model name succesfully appended in: {const_path}")
 
             
-            register_and_tag_model(const_path= const_path, run_id_value= run_id_value, model_name= model_name, stage= "Staging")
+            register_and_tag_model(const_path= const_path, run_id_value= run_id_value, model_name= model_name, stage= "staging")
 
     except CustomException as ce:
         logger.error(f"Exception found: {ce}")
